@@ -1,0 +1,59 @@
+*, * ::before, *::after {
+    box-sizing: border-box;     /*video on this element somewhere 3.49 tagged in tutorial. selects everything
+ */
+}
+
+body {
+    margin: 0;
+    background:linear-gradient(to right, lavender, orange)
+}
+
+.calculator-grid {
+    display: grid;
+    margin-top: 2rem;
+    justify-content: center;
+    grid-template-columns: repeat(4, 6rem);  /*creates the table grid*/
+    grid-template-rows: minmax(7rem, auto) repeat(5, 6rem);  /*AUTO means it will expand if we use a really long number in the table*/
+}
+
+.calculator-grid > button {
+    cursor: pointer;
+    font-size: 2rem;
+    border: 1px solid white;
+    outline: none;
+    background-color:rgba(255, 255, 255, .75);
+    border-radius: 4px 4px 4px 4px
+}
+
+.calculator-grid > button:hover,
+.calculator-grid > button:focus {
+    background-color:rgba(255, 255, 255, .10);
+    
+}
+
+.span-two {
+    grid-column: span 2;
+}
+
+.output {
+    grid-column: 1 / -1;
+    background-color: rgba(0,0,0, .60);
+    border-radius: 4px 4px 4px 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-around;
+    padding: .75rem;
+    word-wrap: break-word;
+    word-break: break-all;  /*7.53 into guide, do some research on what the specifics of this mean*/
+}
+
+.output .previous-operand {
+    color: rgba(255, 255, 255, .75);
+    font-size: 1.5rem;
+}
+
+.output .current-operand {
+    color: white;
+    font-size:2.5rem;
+}
